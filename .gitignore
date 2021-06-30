@@ -1,0 +1,5 @@
+.vs/*
+DatabaseIO/obj/*
+DatabaseProvider/obj/*
+Models/obj/*
+packages/*
