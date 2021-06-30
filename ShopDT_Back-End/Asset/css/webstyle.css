@@ -1,0 +1,596 @@
+.container-fluid{
+	padding-right: 0px;
+	background-color: #74100f;
+}
+header{
+	border-bottom: solid 1px #c0c0c0;
+}
+.navbar-default{
+	border: none;
+	background: none;
+}
+.navbar-brand{
+	padding: 0;
+	height: 80px;
+	width: 30px;
+}
+.navbar-default .navbar-nav>li>a{
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: Calibri;
+	margin-top: -1px;
+}
+
+.navbar-nav {
+	padding-top: 30px;
+}
+.navbar-nav.navbar-right: last-child
+{
+	margin-right: 200px;
+}
+.navbar-form {
+	margin-left: 414px;
+	margin-top: 43px; 
+	width: 515px;
+}
+.img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img {
+	height: 500px;
+	width: 1200px;
+}
+.row {
+	margin-left: -54px;
+}
+.navbar-collapse
+{
+	padding-left: 15px;
+	padding-right: 145px;
+}
+.glyphicon-shopping-cart:before 
+{
+	color: white;
+}
+.container {
+	padding: 0;
+}
+.h1, .h1, h2, .h2, h3, .h3 
+{
+	margin-top: 12px;
+}
+.img-responsive, .thumbnail>img, .thumbnail a>img, .carousel-inner>.item>img, .carousel-inner>.item>a>img 
+{
+	height: 524px;
+}
+
+
+/*SP bán chạy*/
+.tenhang{
+	clear: both;
+	display: flex;
+	flex-flow: row wrap;
+	flex: 1 100%;
+}
+.tenhang ul{
+		padding: 0;
+		/* margin: 6px 0 0 138px;*/
+		list-style: none;
+		width: 100%;
+}
+.tenhang ul li {
+		border: 1px solid #F5F5F5;
+		width: 11%;
+		margin: 8px;
+		float: left;
+		padding: 5px;
+		border-radius: 20px; 
+		text-align: center;
+}
+.tenhang ul li a {
+		text-decoration: none;
+		font-size: 19px;
+		color: black;
+		text-decoration: none;
+}
+.tenhang ul li:hover{
+		background-color: red;
+}
+hr {
+  border:none;
+  border-top:1px dotted black;
+  width:100%;
+}
+.clr {
+    clear: both;
+}
+h1.h1{
+    display: block;
+    font-weight: bold;
+    line-height: 50px;
+    font-size: 19px;
+    text-transform: uppercase;
+
+}
+.tensanpham{
+	clear: both;
+    display: block;
+    background: #fff;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    flex: 1 100%;
+    border-top: 1px solid #eee;
+    border-left: 1px solid #eee;
+    margin-bottom: 15px;
+    margin: 0 0  15px;
+    padding: 0 0 0 0px;
+}
+.tensanpham li
+	{
+	float: left;
+    width: 19.99%;
+    overflow: hidden;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+	}
+.tensanpham li a 
+	{
+	display: block;
+    overflow: hidden;
+    background: #fff;
+    padding: 10px 0;
+    text-decoration: none;
+	}
+.tensanpham li a img{
+	display: block;
+    width: 180px;
+    height: 180px;
+    margin: 15px auto;
+}
+.tensanpham li .uudai {
+    display: block;
+    padding: 5px 10px 0 10px;
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.4;
+    float: left;
+    white-space: normal;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.tensanpham li :hover
+	{
+		background: lightblue;
+	}
+ul{
+    list-style: none;
+}
+.tensanpham li h3 {
+    display: block;
+    line-height: 1.3em;
+    font-size: 15px;
+    margin: 0 10px;
+    color: #333;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+}
+.tensanpham li .giaca {
+    display: block;
+    overflow: hidden;
+    padding: 5px 10px 0 10px;
+}
+.tensanpham li strong {
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+    font-size: 14px;
+    color: #e10c00;
+    line-height: 15px;
+}
+.tensanpham li span {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    text-decoration: line-through;
+    margin-left: 5px;
+    color: #222;
+}
+.pagenavi  {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+}
+.panel {
+	margin-bottom: 0px;
+}
+.panel-heading {
+	padding: 2px 15px;
+}
+/*a {
+ float: right;
+}*/
+
+.ct1
+{
+	float: right;
+}
+.glyphicon
+{
+	margin-right: 8px;
+}
+
+/* sản phẩm chi tiết*/
+
+.breadcrumb {
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    background: #fff;
+    line-height: 32px;
+    padding-top: 5px;
+    padding: 5px 0px 8px;
+}
+.breadcrumb li {
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+}
+.breadcrumb li a {
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 17px;
+    color: #e5ae13;
+}
+.breadcrumb a{
+	text-decoration: none;
+}
+h1 {
+    float: left;
+    overflow: hidden;
+    font-size: 27px;
+    color: #333;
+    line-height: 40px;
+    margin: 0 0 10px;
+}
+.anh {
+    float: left;
+    overflow: hidden;
+    width: 42%;
+    position: relative;
+}
+.anh img {
+    display: block;
+    height: auto;
+    margin: auto;
+    cursor: pointer;
+    max-width: 100%;
+}
+.jv {
+	float: left;
+    position: relative;
+    width: 33%;
+    margin: 0 1% 0 1%;
+}
+.jv a{
+	text-decoration: none;
+}
+.giathanh {
+	display: block;
+    overflow: hidden;
+    line-height: 20px;
+    padding: 0 10px 10px;
+}
+.giathanh strong {
+    display: inline-block;
+    overflow: hidden;
+    font-size: 25px;
+    color: #e10c00;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.giathanh span {
+	display: inline-block;
+    vertical-align: middle;
+    font-size: 18px;
+    color: #999;
+    text-decoration: line-through;
+    margin-right: 10px;
+}
+.khuyenmai{
+	margin: 10px;
+    cursor: pointer;
+    margin-bottom: 15px;
+    border: 1px dashed #3c763d;
+}
+.khuyenmai p {
+	padding: 4px 10px;
+    font-weight: bold;
+    color: #333;
+    background: #c2ff09c7;
+    border-bottom: 1px dashed #d7d7d7;
+    font-size: 21px;
+}
+.main{
+	padding: 15px 15px 5px 15px;
+}
+.main ul {
+	padding: 0 0 5px 0;
+}
+.main ul li {
+	margin-bottom: 5px;
+    padding-left: 15px;
+    position: relative;
+    font-size: 16px;
+    color: #000;
+}
+.muangay{
+	display: block;
+    overflow: hidden;
+    margin: 10px;
+}
+.muangay .buynow {
+    display: block;
+    overflow: hidden;
+    padding: 20px 0;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: normal;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    background: #ff0000;
+}
+.camket{
+	float: right;
+    width: 22.5%;
+    overflow: visible;
+    background: #fff;
+    position: relative;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+.h4 {
+	margin-bottom: 10px;
+	font-weight: bold;
+	padding-left: 40px;
+}
+.camket ul {
+	display: block;
+    overflow: hidden;
+    padding-bottom: 5px;
+    margin: 0 0 10px 0;
+    padding-top: 10px;
+    padding: 15px 0px 0px 24px;
+}
+.camket ul li {
+	font-size: 15px;
+    color: #545454;
+    margin-bottom: 8px;
+}
+.box_content {
+    display: block;
+    overflow: hidden;
+    border-top: 1px solid #e4e4e4;
+    margin-top: 15px;
+}
+.left_content {
+    float: left;
+    width: 55%;
+    overflow: hidden;
+    position: relative;
+    margin: 20px 0;
+}
+.dacdiem {
+	display: block;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+.dacdiem h2 {
+    display: block;
+    line-height: 1.3em;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+.right_content {
+    float: right;
+    width: 30%;
+    overflow: visible;
+    margin: 20px 0;
+}
+.tskt {
+	display: block;
+    overflow: visible;
+}
+.tskt h2 {
+    display: block;
+    line-height: 1.3em;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0;
+}
+.thongso {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    padding: 10px 0px 0px 0px;
+}
+.thongso li {
+    display: table;
+    background: #fff;
+    width: 100%;
+    border-top: 1px solid #eee;
+    padding: 5px 0;
+}
+.thongso li span {
+    display: table-cell;
+    width: 40%;
+    vertical-align: top;
+    padding: 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+.thongso li div {
+    display: table-cell;
+    width: auto;
+    vertical-align: top;
+    padding: 6px 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+/*hieuung*/
+.location-listing
+{
+	position: relative;
+}
+.location-image
+{
+	line-height: 0;
+	overflow: hidden;
+}
+.location-image img
+{
+	filter: blur(0px);
+	transition: filter .3s ease-in;
+	transition: scale(1.1);
+	height: 250px;
+}
+.location-title
+{
+	font-size: 1.5em;
+	font-weight: bold;
+	text-decoration: none;
+	z-index: 1;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	transition: opacity .5s;
+	background: rgba(90, 0, 10, 0.4);
+	color: white;
+
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.location-listing:hover .location-title
+{
+	opacity: 1;
+}
+.location-listing .location-title 
+{
+	text-decoration: none;
+	color: white;
+}
+
+/*test*/
+.readmore
+{
+	float: right;
+	margin-top: -33px;
+	text-decoration: none;
+	color: white;
+}
+
+/*container-fluid-1*/
+.col-sm-3
+{
+	padding: 10px;
+}
+.glyphicon-envelope:before 
+{
+	margin-right: 8px;
+}
+.glyphicon-earphone:before 
+{
+	margin-right: 8px;
+}
+.glyphicon-globe:before  
+{
+	margin-right: 8px;
+}
+.glyphicon-map-marker:before 
+{
+	margin-right: 8px;
+}
+p.round2 {
+ border: solid #74100f;
+ border-radius: 8px;
+}
+
+/*giohang*/
+input, button, select, textarea 
+{
+	width: 48px;
+}
+.luachon {
+    background-color: red;
+}
+.active{
+display: inline-block;
+    white-space: nowrap;
+    font-size: 17px;
+}
+.btn btn-default, button
+{
+    width: 150px;
+}
+/*Phụ kiện*/
+.phukien {
+    clear: both;
+    display: flex;
+    flex-flow: row wrap;
+    flex: 1 100%;
+}
+.phukien ul{
+		padding: 0;
+		/* margin: 6px 0 0 138px;*/
+		list-style: none;
+		width: 100%;
+}
+.phukien ul li {
+		border: 1px solid #F5F5F5;
+		width: auto;
+		margin-right: 60px;
+		float: left;
+		padding: 10px;
+		border-radius: 20px; 
+		text-align: center;
+}
+.phukien ul li a {
+		text-decoration: none;
+		font-size: 19px;
+		color: black;
+		text-decoration: none;
+}
+.phukien ul li:hover{
+		background-color: red;
+}
+
+
+
+
+
+
+

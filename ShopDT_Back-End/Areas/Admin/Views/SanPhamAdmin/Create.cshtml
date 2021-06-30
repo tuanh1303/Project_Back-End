@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<script src="~/AssetAdmin/js/product/previewFile.js"></script>
+<h2>Thêm sản phẩm</h2>
+
+@using (Html.BeginForm("Create", "SanPhamAdmin", FormMethod.Post, new { enctype = "nultipart/form-data" }))
+{
+    <table style="width:70%; margin:auto;">
+        <tr>
+            <td>Mã Sản Phẩm</td>
+            <td><input style="width:300px; float:left; height:35px" maxlength="11" type="text" name="MaSP" required /></td>
+            <td rowspan="4">
+                <div>
+                    <img id="target" class="img" src="#" alt="your image" style="float:right; width:320px; height:300px" required />
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Loại Sản Phẩm</td>
+            <td>
+                @Html.DropDownList("MaLoaiSP", null, new { @style = "float:left; width:300px; height:35px;" })
+            </td>
+        </tr>
+        <tr>
+            <td>Tên Sản Phẩm</td>
+            <td><input style="width:300px; float:left; height:35px;" type="text" name="TenSP" required /></td>
+        </tr>
+        <tr>
+            <td>Hình</td>
+            <td><input type="File" class="img" id="file_Hinh" name="HinhAnhSP" onchange="previewFile();" style="float:left" required /></td>
+        </tr>
+       
+        <tr>
+            <td>Giá</td>
+            <td><input style="width:300px; height:35px; float:left" type="number" name="Gia" required /></td>
+        </tr>
+        <tr>
+            <td>Ghi Chú</td>
+            <td><input style="width:300px; height:35px; float:left" type="text" name="GhiChu" required /></td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <input style="height:40px; width:300px; margin-left:32%; background:#016ABC; color:#fff; border:1px solid #eee; border-radius: 20px; box-shadow:5px 5px 5px #eee;"
+                       type="submit" name="btn_ThemSanPham" value="Hoàn tất thêm Sản Phẩm" />
+            </td>
+        </tr>
+    </table>
+}
+

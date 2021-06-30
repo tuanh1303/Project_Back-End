@@ -1,0 +1,78 @@
+﻿@model IEnumerable<DatabaseProvider.SanPham>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<style>
+    #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        margin: auto;
+        background-color: white;
+        text-align: center;
+    }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            background-color: dodgerblue;
+            color: white;
+        }
+    #tb {
+        width: 85%;
+        clear: both;
+        margin-top: 6px !important;
+        margin-bottom: 6px !important;
+        max-width: none !important;
+        border-collapse: separate !important;
+        border-spacing: 0;
+        text-align: center;
+    }
+</style>
+<h2 style="margin:0 0 30px 0">Quản Lý Sản Phẩm</h2>
+
+<table id="tb" @*id="customers"*@>
+    <tr>
+        <th>Mã Sản Phẩm</th>
+        <th>Tên Sản Phẩm</th>
+        <th>Hình Ảnh</th>
+        
+        <th colspan="2">
+            <a href="@Url.Action("Create","SanPhamAdmin")"><img src="~/Asset/IMG/icons8-create-64.png" style="width:30px;height:30px"/></a>
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MaSP</td>
+            <td>@item.TenSP</td>
+            <td>
+                <img src="~/Asset/IMG/@item.HinhAnhSP" style="width:100px;height:100px" />
+            </td>
+
+            <td>
+                <a href="@Url.Action("Edit","SanPhamAdmin", new { id = @item.MaSP })"><img src="~/Asset/IMG/icons8-edit-24.png" style="width:30px;height:30px"/></a>
+            </td>
+            <td>
+                <a href="@Url.Action("Delete","SanPhamAdmin", new { id = @item.MaSP })"><img src="~/Asset/IMG/icons8-delete-48.png" style="width:30px;height:30px"/></a>
+            </td>
+        </tr>
+    }
+
+</table>
+

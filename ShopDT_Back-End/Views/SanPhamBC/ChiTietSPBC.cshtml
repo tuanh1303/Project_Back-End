@@ -1,0 +1,194 @@
+﻿@model DatabaseProvider.SanPhamBanChay
+@{
+    ViewBag.Title = "ChiTietSPBC";
+    Layout = "~/Views/MyLayout/MainLayout.cshtml";
+}
+@section head {
+
+    <script src="~/Scripts/cart.js"></script>
+}
+<body>
+
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="@Url.Action("Index")">Điện thoại</a></li>
+
+        </ol>
+        <h1>@Model.TenSP</h1>
+        <hr>
+        <aside class="anh">
+            <img src="~/Asset/IMG/@Model.HinhAnhSP">
+        </aside>
+        <aside class="jv">
+            <div class="giathanh">
+                <strong>@Model.Gia.GetValueOrDefault(0).ToString("N0") ₫</strong>
+            </div>
+            <div class="soluong">
+                <label>Số lượng</label>
+                <input id="quantity" type="number" name="quantity" min="1" value="1" class="tc item-quantity">
+            </div>
+            <div class="khuyenmai">
+                <p> Khuyến mãi đặc biệt (SL có hạn) </p>
+                <div class="main">
+                    <ul>
+                        <li>Trả góp 0%</li>
+                    </ul>
+                    <ul>
+                        <li>Giảm ngay 1,500,000đ khi mua kèm Apple Watch Series 3/5 GPS + Cellular</li>
+                    </ul>
+                    <ul>
+                        <li>Tặng PMH 500,000đ</li>
+                    </ul>
+                    <ul>
+                        <li>Thu cũ lên đời chỉ từ 10 triệu</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="muangay">
+                <input class="btn btn-danger" style="width:100%" type="button" onclick="addCart()" value="Thêm vào giỏ hàng" />
+            </div>
+        </aside>
+        <div class="camket">
+            <h4 class="h4">Shop cam kết:</h4>
+            <ul>
+                <li>
+                    <p>Hàng chính hãng</p>
+                </li>
+                <li>
+                    <p>Bảo hành 12 Tháng chính hãng</p>
+                </li>
+                <li>
+                    <p>Giao hàng tận nơi trên toàn quốc</p>
+                </li>
+                <li>
+                    <p>Bảo hành nhanh trên toàn quốc</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="clr"></div>
+    <div class="box_content">
+        <aside class="left_content">
+            <div class="dacdiem">
+                <h2>Đặc điểm nổi bật của iPhone 11 64GB:</h2>
+                <div id="carousel-id" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-id" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-id" data-slide-to="1" class=""></li>
+                        <li data-target="#carousel-id" data-slide-to="2" class=""></li>
+                        <li data-target="#carousel-id" data-slide-to="3" class=""></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <img alt="First slide" src="~/Asset/IMG/carousel12.jpg" />
+
+                        </div>
+                        <div class="item">
+                            <img alt="Second slide" src="~/Asset/IMG/carousel13.jpg" />
+
+                        </div>
+                        <div class="item">
+                            <img alt="Third slide" src="~/Asset/IMG/carousel14.jpg" />
+
+                        </div>
+                        <div class="item">
+                            <img alt="Fourth slide" src="~/Asset/IMG/carousel15.jpg" />
+
+                        </div>
+                    </div>
+                    <a class="left carousel-control" href="#carousel-id" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                    <a class="right carousel-control" href="#carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+                </div>
+            </div>
+        </aside>
+        <aside class="right_content">
+            <div class="tskt">
+                <h2>Thông số kỹ thuật:</h2>
+                <ul class="thongso">
+                    <li>
+                        <span>Màn hình:</span>
+                        <div>IPS LCD, 6.1", Liquid Retina</div>
+                    </li>
+                    <li>
+                        <span>Hệ điều hành:</span>
+                        <div>iOS 13</div>
+                    </li>
+                    <li>
+                        <span>Camera sau:</span>
+                        <div>Chính 12 MP & Phụ 12 MP</div>
+                    </li>
+                    <li>
+                        <span>Camera trước:</span>
+                        <div>12 MP</div>
+                    </li>
+                    <li>
+                        <span>CPU:</span>
+                        <div>Apple A13 Bionic 6 nhân</div>
+                    </li>
+                    <li>
+                        <span>RAM:</span>
+                        <div> 4 GB</div>
+                    </li>
+                    <li>
+                        <span>Bộ nhớ trong:</span>
+                        <div>64 GB</div>
+                    </li>
+                    <li>
+                        <span>Thẻ SIM:</span>
+                        <div>1 eSIM & 1 Nano SIM, Hỗ trợ 4G</div>
+                    </li>
+                    <li>
+                        <span>Dung lượng pin:</span>
+                        <div>3110 mAh, có sạc nhanh</div>
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+    <hr>
+    <div class="container">
+        <h2>Hỏi đáp & tư vấn</h2>
+        <div class="tuvan">
+            <textarea id="txtEditor" name="" cols="" rows="" class="parent_input txtEditor" placeholder="Hãy đặt câu hỏi, chúng tôi sẽ tư vấn cho bạn..." onclick="cmtaddcommentclick();" onkeyup="cmtaddcommentclick();"></textarea>
+        </div>
+        <div class="hoidap">
+            <a class="gui" href="">
+                <b>Gửi</b>
+            </a>
+        </div>
+    </div>
+    <style>
+        .tuvan textarea {
+            height: 150px;
+            width: 100%;
+            border-radius: 4px 4px 4px 4px;
+            padding: 10px;
+            box-sizing: border-box;
+            line-height: 20px;
+        }
+
+        .gui {
+            padding: 5px 25px;
+            height: 20px;
+            font-size: 14px;
+            color: #fff;
+            text-transform: uppercase;
+            border: 1px solid #288ad6;
+            border-radius: 4px;
+            background: #288ad6;
+            margin: 0;
+        }
+
+        .hoidap a {
+            text-decoration: none;
+        }
+    </style>
+    <script>
+        function addCart() {
+            var sl = document.querySelector('#quantity').value;
+            window.location = "/GioHang/AddItem?IDSP=@Model.MaSP&SoLuong=" + sl;
+        }
+    </script>
+    <br />
+</body>
+

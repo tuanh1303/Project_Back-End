@@ -1,0 +1,486 @@
+﻿@model List<DatabaseProvider.SanPhamBanChay>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/MyLayout/MainLayout.cshtml";
+
+}
+@section head {
+
+    <script src="~/Scripts/cart.js"></script>
+}
+
+<div class="container">
+    <dir class="row">
+        <div class="col-md-12">
+            <div id="carousel-id" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-id" data-slide-to="0" class=""></li>
+                    <li data-target="#carousel-id" data-slide-to="1" class=""></li>
+                    <li data-target="#carousel-id" data-slide-to="2" class="active"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item">
+                        <img alt="First slide" src="https://9to5mac.com/wp-content/uploads/sites/6/2019/09/iphone-11-1.jpg?quality=82&strip=all&w=1000" />
+
+                    </div>
+                    <div class="item">
+                        <img alt="Second slide" src="https://images.droidsans.com/wp-content/uploads/2019/08/OPPO-Reno-2-cover.jpg" />
+
+                    </div>
+                    <div class="item active">
+                        <img alt="Third slide" src="https://imgs.viettelstore.vn/Images/Product/ProductArchive/27/0-Nam%202019/Thang%204/22%2004/ra-mat-Galaxy-A70-1.jpg" />
+
+                    </div>
+                </div>
+                <a class="left carousel-control" href="#carousel-id" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+                <a class="right carousel-control" href="#carousel-id" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+        </div>
+    </dir>
+</div>
+              </section>
+
+<!---Main--->
+<div class="container 1">
+    <div class="panel panel-default">
+        <div class="panel-heading" style="background-color:#74100f; color:white;">
+            <h2>Sản phẩm nổi bật</h2>
+        </div>
+    </div>
+</div>
+
+<div class="container 2">
+    <ul class="tensanpham">
+        @foreach (DatabaseProvider.SanPhamBanChay item in Model)
+        {
+            <li>
+                <a href="@Url.Action("ChiTietSPBC","SanPhamBC", new { id = @item.MaSP })">
+                    <img src="~/Asset/IMG/@item.HinhAnhSP" width="180" height="180">
+                    <h3>@item.TenSP</h3>
+                    <div class="giaca">
+                        <strong>@item.Gia.GetValueOrDefault(0).ToString("N0") ₫</strong>
+                        <span></span>
+                    </div>
+                </a>
+            </li>
+        }
+
+    </ul>
+</div>
+
+<div class="container 3">
+    <div class="grid-container">
+        <article class="location-listing">
+            <a class="location-title" href="@Url.Action("Index", "XemChiTiet")">XEM CHI TIẾT</a>
+            <div class="location-image">
+                <a href="#">
+                    <img src="/Asset/IMG/anh2.jpg" height="230px" width="1169px">
+                </a>
+            </div>
+        </article>
+    </div>
+</div>
+
+<div class="container 5">
+    <div class="panel panel-default">
+        <div class="panel-heading" style="background-color:#74100f; color:white;">
+            <h2>Điện thoại</h2>
+
+            <a href="product.html" class="readmore"><i class="glyphicon glyphicon-hand-right"></i>Xem tất cả</a>
+        </div>
+    </div>
+</div>
+
+<div class="container 6">
+    <ul class="tensanpham">
+        <li>
+            <a href="vivo19.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/42/204651/vivo-y19-white-quanghai-600x600.jpg" alt="600x600" width="180" height="180">
+                <h3>Vivo Y19</h3>
+                <div class="giaca">
+                    <strong>4.990.000₫</strong>
+                    <span></span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="samsunggalaxyA50.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/42/207641/samsung-galaxy-a50s-green-600x600.jpg" alt="600x600" width="180" height="180">
+                <h3>Samsung Galaxy A50s</h3>
+                <div class="giaca">
+                    <strong>4.990.000₫</strong>
+                    <span></span>
+                </div>
+                <div class="uudai">
+                    <p> Phiếu mua hàng Samsung trị giá 300.000đ và <b>2 K.mãi</b> khác</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="iphone11_64GB.html">
+                <img src="https://bachlongmobile.com/media/catalog/product/cache/2/image/040ec09b1e35df139433887a97daa66f/5/_/5_23_5.jpg" alt="800x800" width="180" height="180">
+                <h3>iPhone 11 64GB</h3>
+                <div class="giaca">
+                    <strong>21.990.000₫</strong>
+                    <span></span>
+                </div>
+                <div class="uudai">
+                    <p> Phiếu mua hàng trị giá 500.000đ</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="samsung_galaxyA20s_64GB.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/42/198792/samsung-galaxy-a20-red-400x460.png" alt="400x460" width="180" height="180">
+                <h3>Samsung Galaxy A20s 64GB</h3>
+                <div class="giaca">
+                    <strong>4.990.000₫</strong>
+                    <span>5.390.000₫</span>
+                </div>
+                <div class="uudai">
+                    <p>  Ưu đãi quà tặng Galaxy trị giá đến 270.000đ</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="xiaomi_redmi8_4GB_64GB.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/42/212212/xiaomi-redmi-8-64gb-red-400x460.png" alt="200x200" width="180" height="180">
+                <h3>Xiaomi Redmi 8 (4GB/64GB)</h3>
+                <div class="giaca">
+                    <strong>3.590.000₫</strong>
+                    <span></span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="oppoA5_2020_64GB.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/42/210441/oppo-a5-2020-white-400x460.png" alt="400x460" width="180" height="180">
+                <h3>OPPO A5 (2020) 64GB</h3>
+                <div class="giaca">
+                    <strong>4.290.000₫</strong>
+                    <span></span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="iphone11proMax_512GB.html">
+                <img src="https://didongviet.vn/pub/media/catalog/product//i/p/iphone-11-pro-max-512gb-2-sim.jpg" alt="800x800" width="180" height="180">
+                <h3>iPhone 11 Pro Max 512GB</h3>
+                <div class="giaca">
+                    <strong>43.990.000₫</strong>
+                    <span></span>
+                </div>
+                <div class="uudai">
+                    <p>   Phiếu mua hàng trị giá 1 triệu</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="iphone11proMax_256GB.html">
+                <img src="https://bachlongmobile.com/media/catalog/product/cache/2/image/040ec09b1e35df139433887a97daa66f/4/_/4_31_1.jpg" alt="800x800" width="180" height="180">
+                <h3>iPhone 11 Pro Max 256GB</h3>
+                <div class="giaca">
+                    <strong>37.990.000₫</strong>
+                    <span></span>
+                </div>
+                <div class="uudai">
+                    <p>   Phiếu mua hàng trị giá 1 triệu</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="iphone11pro_256GB.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/42/210655/iphone-11-pro-256gb-black-400x460.png" alt="400x460" width="180" height="180">
+                <h3>iPhone 11 Pro 256GB</h3>
+                <div class="giaca">
+                    <strong>34.990.000₫</strong>
+                    <span></span>
+                </div>
+                <div class="uudai">
+                    <p>   Phiếu mua hàng trị giá 1 triệu</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="iphone11proMax_64GB.html">
+                <img src="https://bachlongmobile.com/media/catalog/product/cache/2/image/040ec09b1e35df139433887a97daa66f/2/_/2_46_2.jpg" alt="800x800" width="180" height="180">
+                <h3>iPhone 11 Pro Max 64GB</h3>
+                <div class="giaca">
+                    <strong>33.990.000₫</strong>
+                    <span></span>
+                </div>
+                <div class="uudai">
+                    <p>   Phiếu mua hàng trị giá 1 triệu</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="realme_XT.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/42/210241/realme-xt-white-1-400x460.png" alt="400x460" width="180" height="180">
+                <h3>Realme XT</h3>
+                <div class="giaca">
+                    <strong>7.990.000₫</strong>
+                    <span></span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="Samsung_galaxyA7_2018_128GB.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/42/194327/samsung-galaxy-a7-2018-128gb-black-400x460.png" alt="400x460" width="180" height="180">
+                <h3>Samsung Galaxy A7 (2018) 128GB</h3>
+                <div class="giaca">
+                    <strong>7.990.000₫</strong>
+                    <span></span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="oppo_F11.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/42/199801/oppo-f11-mtp-600x600.jpg" alt="600x600" width="180" height="180">
+                <h3>OPPO F11</h3>
+                <div class="giaca">
+                    <strong>6.290.000₫</strong>
+                    <span>7.290.000₫</span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="samsunggalaxyA50_64GB.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/42/196963/samsung-galaxy-a50-black-1-400x460.png" alt="400x460" width="180" height="180">
+                <h3>Samsung Galaxy A50 64GB</h3>
+                <div class="giaca">
+                    <strong>6.990.000₫</strong>
+                    <span></span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="Samsung_galaxyA7_2018.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/42/111107/samsung-galaxy-a7-2018-blue-600x600.jpg" alt="600x600" width="180" height="180">
+                <h3>Samsung Galaxy A7 (2018)</h3>
+                <div class="giaca">
+                    <strong>6.990.000₫</strong>
+                    <span></span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="oppoA9_2020.html">
+                <img src="https://cdn.fptshop.com.vn/Uploads/Originals/2019/9/3/637031273088898415_oppo-a9-xanh-1.png" alt="800x800" width="180" height="180">
+                <h3>OPPO A9 (2020)</h3>
+                <div class="giaca">
+                    <strong>6.990.000₫</strong>
+                    <span></span>
+                </div>
+                <div class="uudai">
+                    <p>Tặng Sạc dự phòng Tekin Q1031 và <b>1 K.mãi</b> khác</p>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="oppo_K3.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/42/202863/oppo-k3-black-600x600.jpg" alt="600x600" width="180" height="180">
+                <h3>OPPO K3</h3>
+                <div class="giaca">
+                    <strong>5.990.000₫</strong>
+                    <span>6.990.000₫</span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="realme_5pro_128GB.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/42/211163/realme-5-pro-8gb-green-600x600.jpg" alt="600x600" width="180" height="180">
+                <h3>Realme 5 Pro (8GB/128GB)</h3>
+                <div class="giaca">
+                    <strong>6.990.000₫</strong>
+                    <span></span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="huawei_P30lite.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/42/198985/huawei-p30-lite-1-600x600.jpg" alt="600x600" width="180" height="180">
+                <h3>Huawei P30 Lite</h3>
+                <div class="giaca">
+                    <strong>6.020.000₫</strong>
+                    <span>6.690.000₫</span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="xiaomi_note8pro_6GB_128GB.html">
+                <img src="https://www.yaphone.com/3072-tm_thickbox_default/xiaomi-redmi-note-8-pro-global-128gb-6gb-ram-dual-sim-green.jpg" alt="1200x1200" width="180" height="180">
+                <h3>Xiaomi Redmi Note 8 Pro (6GB/128GB)</h3>
+                <div class="giaca">
+                    <strong>6.490.000₫</strong>
+                    <span></span>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<div class="container 7">
+    <div class="panel panel-default">
+        <div class="panel-heading" style="background-color:#74100f; color:white;">
+            <h2>Phụ kiện</h2>
+
+            <a href="phukien.html" class="readmore"><i class="glyphicon glyphicon-hand-right"></i>Xem tất cả</a>
+        </div>
+    </div>
+</div>
+
+<div class="container 8">
+    <ul class="tensanpham">
+        <li>
+            <a href="sanpham_oplung01.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/60/215689/op-lung-iphone-xs-max-nhua-deo-rocket-jm-den-1-600x600.jpg" alt="600x600" width="180" height="180">
+                <h3>Ốp lưng iPhone XS Max nhựa dẻo ROCKET JM Đen</h3>
+                <div class="giaca">
+                    <strong>100.000₫</strong>
+                    <span></span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="sanpham_oplung02.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/60/215687/op-lung-iphone-xs-max-nhua-deo-nake-slim-jm-nude-1-600x600.jpg" alt="600x600" width="180" height="180">
+                <h3>Ốp lưng iPhone XS Max nhựa dẻo Nake Slim JM JM Nude</h3>
+                <div class="giaca">
+                    <strong>50.000₫</strong>
+                    <span></span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="sanpham_oplung03.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/60/215673/op-lung-iphone-xs-max-nhua-deo-xanh-chan-troi-1-600x600.jpg" alt="600x600" width="180" height="180">
+                <h3>Ốp lưng iPhone XS Max nhựa dẻo LIQUID SILICONE B JM Xanh chân trời</h3>
+                <div class="giaca">
+                    <strong>250.000₫</strong>
+                    <span></span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="sanpham_oplung04.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/60/215671/op-lung-iphone-xs-max-nhua-deo-harble-jm-gold-1-600x600.jpg" alt="600x600" width="180" height="180">
+                <h3>Ốp lưng iPhone XS Max nhựa dẻo HARBLE JM Gold</h3>
+                <div class="giaca">
+                    <strong>100.000₫</strong>
+                    <span></span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="sanpham_loa05.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/382/194825/loa-keo-bluetooth-enkor-l0810k-den-avatar-600x600.jpg" alt="600x600" width="180" height="180">
+                <h3>Loa Kéo Bluetooth Enkor L0810K Đen</h3>
+                <div class="giaca">
+                    <strong>2.000.000₫</strong>
+                    <span></span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="sanpham_thenho03.html">
+                <img src="http://thitruongmaytinh.vn/Image/Picture/Phu_Kien/Micro%20SD%2032G%20CLass%2010.jpg" alt="600x600" width="180" height="180">
+                <h3>Thẻ nhớ MicroSD 32 GB Class 10</h3>
+                <div class="giaca">
+                    <strong>300.000₫</strong>
+                    <span></span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="sanpham_thenho04.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/55/203233/the-nho-microsd-32gb-lexar-class-10-uhs-i-5-600x600.jpg" alt="600x600" width="180" height="180">
+                <h3>Thẻ nhớ MicroSD 32 GB Lexar class 10 UHS-I</h3>
+                <div class="giaca">
+                    <strong>300.000₫</strong>
+                    <span></span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="sanpham_loa01.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/382/212882/loa-bluetooth-mozard-e7-1-600x600-1-600x600.jpg" alt="600x600" width="180" height="180">
+                <h3>Loa Bluetooth Mozard E7</h3>
+                <div class="giaca">
+                    <strong>700.000₫</strong>
+                    <span></span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="sanpham_loa02.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/382/212879/loa-bluetooth-fenda-w19-nau-1-600x600-1-600x600.jpg" width="180" height="180">
+                <h3>Loa Bluetooth Fenda W19 Nâu</h3>
+                <div class="giaca">
+                    <strong>1.500.000₫</strong>
+                    <span></span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="sanpham_loa03.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/382/207246/loa-bluetooth-jbl-pulse2blkas-den-add-600x600-1-600x600.jpg" alt="600x600" width="180" height="180">
+                <h3>Loa Bluetooth JBL PULSE2BLKAS Đen</h3>
+                <div class="giaca">
+                    <strong>3.690.000₫</strong>
+                    <span></span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="sanpham_loa04.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/382/197860/loa-bluetooth-icutes-mb-m916-cu-den-add-600x600-1-600x600.jpg" alt="600x600" width="180" height="180">
+                <h3>Loa Bluetooth iCutes MB-M916 Cú Đen</h3>
+                <div class="giaca">
+                    <strong>400.000₫</strong>
+                    <span></span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="sanphampinsacduphong03.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/57/212941/pin-sac-du-phong-polymer-10000mah-ava-pilot-1-600x600.jpg" alt="600x600" width="180" height="180">
+                <h3>Pin sạc dự phòng Polymer 10.000mAh AVA Pilot</h3>
+                <div class="giaca">
+                    <strong>400.000₫</strong>
+                    <span></span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="sanphampinsacduphong04.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/57/212876/sac-du-phong-polymer-10000mah-c-pd-qc30-ubc10000ps-1-600x600.jpg" alt="600x600" width="180" height="180">
+                <h3>Pin sạc dự phòng Polymer 10.000mAh Type C PD QC3.0 iWALK UBC10000PS Xanh</h3>
+                <div class="giaca">
+                    <strong>900.000₫</strong>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="sanpham_saccap04.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/58/215781/cap-lightning-1m-xmobile-ltl-01-xanh-reu-1-1-600x600.jpg" alt="600x600" width="180" height="180">
+                <h3>Cáp Lightning 1m Xmobile LTL-01 Xanh rêu</h3>
+                <div class="giaca">
+                    <strong>150.000₫</strong>
+                    <span></span>
+                </div>
+            </a>
+        </li>
+        <li>
+            <a href="sanpham_saccap06.html">
+                <img src="https://cdn.tgdd.vn/Products/Images/58/211573/cap-type-c-type-c-09m-anker-a8187-xam-1-1-600x600.jpg" alt="600x600" width="180" height="180">
+                <h3>Cáp Type C-Type C 0.9m Anker A8187 Xám</h3>
+                <div class="giaca">
+                    <strong>350.000₫</strong>
+                    <span></span>
+                </div>
+            </a>
+        </li>
+    </ul>
+</div>
+

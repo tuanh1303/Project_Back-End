@@ -1,0 +1,43 @@
+﻿@model List<DatabaseProvider.SanPhamBanChay>
+@{
+    ViewBag.Title = "ChiTietSPBC";
+    Layout = "~/Views/MyLayout/MainLayout.cshtml";
+}
+<br />
+<br />
+@section head {
+
+    <script src="~/Scripts/cart.js"></script>
+}
+
+<body>
+    <div class="container 1">
+        <div class="panel panel-default">
+            <div class="panel-heading" style="background-color:#74100f; color:white;">
+                <h2>Sản phẩm bán chạy</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container 2">
+        <ul class="tensanpham">
+            @foreach (DatabaseProvider.SanPhamBanChay item in Model)
+            {
+                <li>
+                    <a href="@Url.Action("ChiTietSPBC","SanPhamBC", new { id = @item.MaSP })">
+                        <img src="~/Asset/IMG/@item.HinhAnhSP" width="180" height="180">
+                        <h3>@item.TenSP</h3>
+                        <div class="giaca">
+                            <strong>@item.Gia.GetValueOrDefault(0).ToString("N0") ₫</strong>
+                            <span></span>
+                        </div>
+                    </a>
+                </li>
+            }
+        </ul>
+    </div>
+</body>
+
+
+
+

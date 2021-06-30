@@ -1,0 +1,67 @@
+﻿@model List<ShopDT_Back_End.Models.GHItem>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/MyLayout/MainLayout.cshtml";
+}
+
+@section head{
+
+
+}
+
+<div class="container">
+    <ol class="breadcrumb">
+        <li><a href="product.html">Giỏ hàng</a></li>
+        <li class="active">Chi tiết giỏ hàng</li>
+    </ol>
+    <br />
+    <div class="section group">
+        @if (Model.Count > 0)
+        {
+            <table class="table">
+                <thead>
+                    <tr>
+                        <td>Mã Sản Phẩm</td>
+                        <td>Tên Sản Phẩm</td>
+                        <td>Hình ảnh Sản Phẩm</td>
+                        <td>Số Lượng</td>
+                        <td>Đơn giá</td>
+                        <td>Tổng tiền</td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.sp.MaSP </td>
+                            <td>@item.sp.TenSP</td>
+                            <td><img src="~/Asset/IMG/@item.sp.HinhAnhSP" width="100" /></td>
+                            <td><input type="text" class="txtSoLuong" data-id="@item.sp.MaSP" value="@item.SoLuong" /></td>
+                            <td>@item.sp.Gia.GetValueOrDefault(0).ToString("N0")</td>
+                            <td>@((item.sp.Gia.GetValueOrDefault(0) * item.SoLuong).ToString("N0"))</td>
+                            <td><a href="#" data-id="@item.sp.MaSP" class="btn-delete">Xóa</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <button id="btnContinue" class="btn">Tiếp tục mua hàng</button>
+            //<button id="btnUpdate" class="btn">Cập nhật giỏ hàng</button>
+            <button id="btnDeleteAll" class="btn">Xóa giỏ hàng</button>
+            <button id="btnPayment" class="btn">Thanh toán</button>
+            <script src="/Asset/JQuery/Controller/cartController.js"></script>
+
+
+        }
+        else
+        {
+            <span class="alert alert-danger">Chưa có sản phẩm trong giỏ hàng</span>
+        }
+
+        <br />
+        <br />
+        <br />
+    </div>
+</div>
+

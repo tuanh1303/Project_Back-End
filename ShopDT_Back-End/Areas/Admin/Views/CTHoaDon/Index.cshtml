@@ -1,0 +1,67 @@
+﻿@model IEnumerable<DatabaseProvider.ChiTietHoaDon>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<style>
+    #customers {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        margin: auto;
+        background-color: white;
+        text-align: center;
+    }
+
+        #customers td, #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            background-color: dodgerblue;
+            color: white;
+        }
+
+    #tb {
+        width: 85%;
+        clear: both;
+        margin-top: 6px !important;
+        margin-bottom: 6px !important;
+        max-width: none !important;
+        border-collapse: separate !important;
+        border-spacing: 0;
+        text-align: center;
+    }
+</style>
+
+<h2 style="margin:0 0 30px 0">Chi Tiết Hóa Đơn</h2>
+
+<table id="tb">
+    <tr>
+        <th>Mã Hóa Đơn</th>
+        <th>Số Lượng</th>
+        <th>Tổng Tiền</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.MaHoaDon</td>
+            <td>@item.SoLuong</td>
+            <td>@item.TongTien.GetValueOrDefault(0).ToString("N0")</td>
+        </tr>
+
+    }
+</table>
+

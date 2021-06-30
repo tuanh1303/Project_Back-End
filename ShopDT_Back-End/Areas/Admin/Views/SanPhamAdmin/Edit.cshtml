@@ -1,0 +1,57 @@
+﻿@model DatabaseProvider.SanPham
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAdmin.cshtml";
+    SelectList listLoai = ViewBag.ListLoai;
+}
+
+
+<script src="~/AssetAdmin/js/product/previewFile.js"></script>
+<h2>Chỉnh sửa sản phẩm</h2>
+
+@using (Html.BeginForm("Edit", "SanPhamAdmin", FormMethod.Post, new { enctype = "nultipart/form-data" }))
+{
+    <table style="width:70%; margin:auto;">
+        <tr>
+            <td></td>
+            <td></td>
+            <td rowspan="4">
+                <div>
+                    <img id="target" class="img" src="~/Asset/IMG/@Model.HinhAnhSP" alt="your image" style="float:right; width:320px; height:300px" required />
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>Loại Sản Phẩm</td>
+            <td>
+                @Html.DropDownList("MaLoaiSP",listLoai, new { @style = "float:left; width:300px; height:35px;" })
+            </td>
+        </tr>
+        <tr>
+            <td>Tên Sản Phẩm</td>
+            <td><input style="width:300px; float:left; height:35px;" type="text" name="TenSP" required value="@Model.TenSP"/></td>
+        </tr>
+        <tr>
+            <td>Hình</td>
+            <td><input type="File" class="img" id="file_Hinh" name="HinhAnhSP" onchange="previewFile();" style="float:left" required value="@Model.HinhAnhSP"/></td>
+        </tr>
+
+        <tr>
+            <td>Giá</td>
+            <td><input style="width:300px; height:35px; float:left" type="number" name="Gia" required value="@Model.Gia"/></td>
+        </tr>
+        <tr>
+            <td>Ghi Chú</td>
+            <td><input style="width:300px; height:35px; float:left" type="text" name="GhiChu" required value="@Model.GhiChu"/></td>
+        </tr>
+        <tr>
+            <td colspan="3">
+                <input style="height:40px; width:300px; margin-left:32%; background:#016ABC; color:#fff; border:1px solid #eee; border-radius: 20px; box-shadow:5px 5px 5px #eee;"
+                       type="submit" name="btn_ThemSanPham" value="Hoàn tất Sửa Sản Phẩm" />
+            </td>
+        </tr>
+    </table>
+}
+
+
+

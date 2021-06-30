@@ -1,0 +1,10 @@
+.text{
+	padding: 5px;
+}
+button, input, optgroup, select, textarea {
+	margin: 5px;
+}
+.glyphicon-flash:before{
+	font-size: 30px;
+	color: yellow;
+}

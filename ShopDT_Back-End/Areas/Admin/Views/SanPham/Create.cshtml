@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Areas/Admin/Views/Shared/LayoutAdmin.cshtml";
+}
+
+<div class="container">
+    @using (Html.BeginForm("Create", "SanPham", new { id = "create_form" }))
+    {
+        @*<div class="row">
+            <div class="col-3">
+                @Html.TextBox("TenSP", "", new { @class = 'form-control' })
+            </div>
+            <div class="col-3">
+                @Html.DropDownList("Loai")
+            </div>
+            <div class="col-3">
+                @Html.TextBox("TenSP", "", new { @class = 'form-control' })
+            </div>
+        </div>*@
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th>MaSP</th>
+                                <th>TenSP</th>
+                                <th>MaLoaiSP</th>
+                                <th>HinhAnhSP</th>
+                                <th>Gia</th>
+                                <th>TinhTrang</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                               <td> @Html.TextBox("MaSP")</td>
+                                <td>@Html.TextBox("TenSP")</td>
+                                <td>@Html.TextBox("MaLoaiSP")</td>
+                                <td>@Html.TextBox("HinhAnhSP")</td>
+                                <td>@Html.TextBox("Gia")</td>
+                                <td>@Html.TextBox("TinhTrang")</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    }
+</div>

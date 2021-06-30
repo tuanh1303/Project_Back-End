@@ -1,0 +1,25 @@
+﻿@model List<DatabaseProvider.SanPhamBanChay>
+@{
+    ViewBag.Title = "Index1";
+    Layout = "~/Views/MyLayout/MainLayout.cshtml";
+}
+
+<body>
+    <h1 class="h1">Điện thoại</h1>
+    <ul class="tensanpham">
+        @foreach (DatabaseProvider.SanPhamBanChay item in Model)
+        {
+            <li>
+                <a href="@Url.Action("ChiTietSP","Shop", new { id = @item.MaSP })">
+                    <img src="~/Asset/IMG/@item.HinhAnhSP" width="180" height="180">
+                    <h3>@item.TenSP</h3>
+                    <div class="giaca">
+                        <strong>@item.Gia ₫</strong>
+                        <span></span>
+                    </div>
+                </a>
+            </li>
+        }
+    </ul>
+</body>
+

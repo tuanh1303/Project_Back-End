@@ -1,0 +1,66 @@
+﻿@model List<DatabaseProvider.SanPham>
+    @{
+        ViewBag.Title = "Index";
+        Layout = "~/Areas/Admin/Views/Shared/LayoutAdmin.cshtml";
+    }
+
+    <style>
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 50%;
+            margin: auto;
+            background-color: white;
+            text-align: center;
+        }
+
+            #customers td, #customers th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #customers tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+
+            #customers tr:hover {
+                background-color: #ddd;
+            }
+
+            #customers th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                background-color: dodgerblue;
+                color: white;
+            }
+    </style>
+    <h2>Quản Lý Sản Phẩm</h2>
+
+    <table id="customers">
+        <tr>
+            <th>Mã Sản Phẩm</th>
+            <th>Tên Sản Phẩm</th>
+            <th>Hình Ảnh</th>
+            <th>Tình Trạng</th>
+            <th colspan="2">
+                <a href="@Url.Action("Create","SanPham")"><img src="~/Asset/images/Create_NhaSX.png" /></a>
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.MaSP</td>
+                <td>@item.TenSP</td>
+                <td><img src="~/Asset/images/@item.HinhAnhSP" style="width:50px;height:70px" /></td>
+                
+
+                <td>
+                    <a href="@Url.Action("Edit","SanPham", new { id = @item.MaSP })"><img src="~/Asset/images/Edit_NhaSX.png" /></a>
+                </td>
+                <td>
+                    <a href="@Url.Action("Delete","SanPham", new { id = @item.MaSP })"><img src="~/Asset/images/Delete_NhaSX.png" /></a>
+                </td>
+            </tr>
+        }
+
+    </table>
